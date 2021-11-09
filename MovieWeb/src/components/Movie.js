@@ -14,6 +14,7 @@ const Movie = () => {
     const { movieId } = useParams();
     const { state: movie, isLoading, error } = useMovieFetch(movieId)
 
+    
     if (isLoading) return <Spinner />
     if (error) return <div>Something goes wrong...</div>
     console.log(movie);
