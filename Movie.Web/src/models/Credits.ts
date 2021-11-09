@@ -1,14 +1,14 @@
 export type Cast = {
     character: string;
-    creditId: string;
+    credit_id: string;
     name: string;
-    profilePath: string;
+    profile_path: string;
 };
 
 export type Crew = {
     job: string;
     name: string;
-    creditId: number;
+    credit_id: number;
 }
 
 export type Credits = {

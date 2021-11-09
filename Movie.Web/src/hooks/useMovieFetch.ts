@@ -1,9 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import API from "../API";
 import { isPersistedState } from "../helpers";
+import { MovieState } from "../models/Movie";
 
-export const useMovieFetch = id => {
-    const [state, setState] = useState({});
+export const useMovieFetch = (id: string) => {
+    const [state, setState] = useState<MovieState>({} as MovieState);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 

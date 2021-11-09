@@ -10,9 +10,9 @@ import Actor from "./Actor";
 import { useMovieFetch } from "../hooks/useMovieFetch";
 import NoImage from '../images/no_image.jpg';
 
-const Movie = () => {
+const Movie: React.FC = () => {
     const { movieId } = useParams();
-    const { state: movie, isLoading, error } = useMovieFetch(movieId)
+    const { state: movie, isLoading, error } = useMovieFetch(movieId ?? '')
   
     if (isLoading) return <Spinner />
     if (error) return <div>Something goes wrong...</div>

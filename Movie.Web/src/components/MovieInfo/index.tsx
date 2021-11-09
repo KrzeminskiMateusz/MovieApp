@@ -3,9 +3,13 @@ import Thumb from "../Thumb"
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import NoImage from "../../images/no_image.jpg"
 import { Wrapper, Content, Text } from "./MovieInfo.styles"
+import { MovieState } from "../../models/Movie"
 
+type Props = {
+    movie: MovieState;
+}
 
-const MovieInfo = ({ movie }) => (
+const MovieInfo: React.FC<Props> = ({ movie }) => (
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>
             <Thumb

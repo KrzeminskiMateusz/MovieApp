@@ -1,13 +1,15 @@
+import { Cast, Crew } from "./Credits"
+
 export type Movie = {
-    backdropPath: string;
+    backdrop_path: string;
     id: number;
-    orginalTitle: string;
+    original_title: string;
     overview: string;
     popularity: number;
-    posterPath: string;
+    poster_path: string;
     title: string;
-    voteAverage: number;
-    voteCount: number;
+    vote_average: number;
+    vote_count: number;
     budget: number;
     runtime: number;
     revenue: number;
@@ -16,6 +18,8 @@ export type Movie = {
 export type Movies = {
     page: number;
     results: Movie[];
-    totalPages: number;
-    totalResults: number;
+    total_pages: number;
+    total_results: number;
 };
+
+export type MovieState = Movie & { actors: Cast[]; directors: Crew[] };

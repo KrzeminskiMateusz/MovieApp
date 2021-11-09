@@ -11,7 +11,7 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config'
 import NoImage from '../images/no_image.jpg';
 
 
-const Home = () => {
+const Home : React.FC = () => {
     const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } = useHomeFetch();
 
     if (error) <div>Something goes wrong...</div>
