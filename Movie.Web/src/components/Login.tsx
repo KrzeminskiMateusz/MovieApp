@@ -25,6 +25,7 @@ const Login: React.FC = () => {
                 date.password
             );
 
+            
             setUser({
                 sessionId: sessionId.session_id,
                 username: date.username,
