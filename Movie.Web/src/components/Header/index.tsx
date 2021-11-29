@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
 import RMDBLogo from '../../images/react-movie-logo.svg'
-import TMDBLogo from '../../images/tmdb_logo.svg'
+import { UserContext } from '../../context'
+import { Wrapper, Content, LogoImg } from "./Header.styles";
 
-import { Wrapper, Content, LogoImg, TMDBLogoImg } from "./Header.styles";
+const Header: React.FC = () => {
+    const { user } = useContext(UserContext)
 
-const Header: React.FC = () => (
-    <Wrapper>
-        <Content>
-            <Link to='/'>
-                <LogoImg src={RMDBLogo} alt='rmdb-logo' />
-            </Link>
-            <TMDBLogoImg src={TMDBLogo} alt='tmdb-logo' />
-        </Content>
-    </Wrapper>
-)
+    return (
+        <Wrapper>
+            <Content>
+                <Link to='/'>
+                    <LogoImg src={RMDBLogo} alt='rmdb-logo' />
+                </Link>
+                {user ?
+                    <span >Logged in as {user.username}</span>
+                    :
+                    <Link to='/login'>
+                        <span >Log in</span>
+                    </Link>
+                }
+            </Content>
+        </Wrapper>
+    )
+}
 
 export default Header

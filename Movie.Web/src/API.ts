@@ -64,7 +64,7 @@ export default {
       return sessionId;
     }
   },
-  rateMovie: async (sessionId: string, movieId: string, value: string) => {
+  rateMovie: async (sessionId: string | undefined, movieId: number, value: number) => {
     const endpoint = `${API_URL}movie/${movieId}/rating?api_key=${API_KEY}&session_id=${sessionId}`;
 
     const rating = await (

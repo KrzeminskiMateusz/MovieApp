@@ -16,7 +16,7 @@ const Movie: React.FC = () => {
   
     if (isLoading) return <Spinner />
     if (error) return <div>Something goes wrong...</div>
-    console.log(movie);
+
     return (
         <>
             <BreadCrumb movieTitle={movie.original_title} />
