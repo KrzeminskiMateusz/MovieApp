@@ -13,6 +13,7 @@ const Header: React.FC = () => {
                 <Link to='/'>
                     <LogoImg src={RMDBLogo} alt='rmdb-logo' />
                 </Link>
+				<p>TESTST</p>
                 {user ?
                     <span >Logged in as {user.username}</span>
                     :
